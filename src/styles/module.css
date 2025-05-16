@@ -269,7 +269,8 @@
 }
 
 @keyframes rotate {
-  from {
+  
+   {
     transform: rotate(360deg);
   }
   to {

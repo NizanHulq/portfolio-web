@@ -22,6 +22,15 @@ const Footer = () => {
           >
             Travis Lord
           </Link>
+          &nbsp;and Modified <span className="text-2xl px-1"></span>
+          {""}
+          by&nbsp;
+          <Link
+            href="https://github.com/NizanHulq"
+            className="underline underline-offset-2"
+          >
+            Nizan D. yaulhaq
+          </Link>
         </div>
       </Layout>
     </footer>

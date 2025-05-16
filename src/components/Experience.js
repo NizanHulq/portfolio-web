@@ -58,21 +58,42 @@ const Experience = () => {
 
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
           <Details
-            position="Developer"
-            company="Stellar Innovations"
-            time="2020 - 2024"
-            address="200 Innovations st"
-            companyLink="https://github.com/lilxyzz/clay-theme"
-            work="At Stellar Innovations, I serve as a web developer, where I play a crucial role in designing and implementing cutting-edge web solutions. My responsibilities include developing responsive and high-performance websites and applications using technologies such as HTML, CSS, JavaScript, React, and Node.js. I collaborate closely with cross-functional teams to ensure our projects meet the highest standards of functionality and user experience. One of my key achievements at Stellar Innovations has been leading the development of a comprehensive e-commerce platform that significantly enhanced our client's online presence and sales. My work is driven by a passion for continuous learning and innovation, always striving to push the boundaries of what's possible in web development."
+            position="Assistant Lecturer"
+            company="Universitas Gadjah Mada (UGM)"
+            time="Aug 2022 - Des 2023"
+            address="Ygoyakarta, Indonesia"
+            companyLink="https://trpl.sv.ugm.ac.id/"
+            work="Assist lecturers in teaching basic programming courses using python and web programming using the laravel framework. Support teaching lecturers in delivering high-quality education by collaborating with them on course design, content development, and
+assessment methods. Facilitate student learning and academic success by creating a supportive and engaging learning environment, responding to their
+queries and concerns, and monitoring their progress and performance. Assist in preparing materials and resources for the lecturers by researching relevant topics, compiling information, and producing
+syllabi, assignments, exams, and presentations. Provide feedback and guidance to students by grading their work, offering constructive comments, and suggesting areas for improvement."
           />
 
           <Details
-            position="Rad Tester"
-            company="Vault Technologies"
-            time="2018 - 2020"
-            address="404 Tech st"
-            companyLink="https://github.com/lilxyzz/holo-theme"
-            work="At Vault Technologies, I worked as a RAD (Rapid Application Development) Tester, where I was responsible for ensuring the quality and functionality of our software applications during the development process. My role involved designing and executing test plans, identifying and documenting bugs, and working closely with developers to resolve issues quickly. This position required a deep understanding of the software development lifecycle and a keen eye for detail to ensure our applications met the highest standards of performance and reliability. My contributions at Vault Technologies helped streamline our development processes and significantly improved the overall quality of our software products."
+            position="Software Engineer Intern"
+            company="PT DW International (Stone Depot)"
+            time="Feb 2023 - Feb 2024"
+            address="Cirebon, Indonesia"
+            companyLink="https://stonedepot.co.id/"
+            work="Developed and maintained internal ERP systems using Laravel, CodeIgniter frameworks, and React Js. Migrated the internal ERP system from CodeIgniter to Laravel within three months, working as one of only two developers. Demonstrated strong front-end and back-end development skills with proficiency in HTML, CSS, JavaScript, PHP, and MySQL. Created user-friendly and efficient web applications that met the needs of clients and users."
+          />
+
+          <Details
+            position="Frontend Web Developer"
+            company="PT Citra Numusi Birawa"
+            time="Aug 2023 - Jan 2024"
+            address="Remote, Indonesia"
+            companyLink="https://www.instagram.com/cinurawa.id/"
+            work="Developed projects as part of the final project requirement for graduation from UGM. Implemented interface designs created by the UI/UX designer using Laravel, jQuery, and Bootstrap CSS. Improved website performance, achieving an average total blocking time of 0.002 ms for JavaScript script performance."
+          />
+
+          <Details
+            position="Backend Developer"
+            company="PT Voltras International"
+            time="Dec 2024 - Present"
+            address="Yogyakarta, Indonesia"
+            companyLink="https://voltras.co.id/"
+            work="Successfully developed and deployed a new Airline Gateway Service from scratch, integrating external airline supplier APIs into our system to support seamless communication and data exchange—used directly by all end users. Maintained and optimized our existing gateway for Sabre GDS integration, ensuring smooth real-time interactions with airline suppliers. Solved a critical pricing issue involving currency conversion and rounding mismatches, delivering a hybrid solution that preserved backend integrity while aligning with user display needs. Proposed and implemented an efficient alternative to caching by optimizing database queries and using a scheduler to manage data retrieval within resource constraints."
           />
         </ul>
       </div>
@@ -89,8 +110,8 @@ const Experience = () => {
           View Projects
         </Link>
         <Link
-          href="/articles/"
-          target={"_self"}
+          href="https://drive.google.com/file/d/1NQ0hy3nAbs86TqR5gT0ZnMK3yiYxLcB3/view?usp=sharing"
+          target={"_blank"}
           className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light

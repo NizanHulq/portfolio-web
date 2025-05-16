@@ -7,6 +7,8 @@ import {
   DevIcon,
   GithubIcon,
   LinkedInIcon,
+  // InstagramIcon,
+  TwitterIcon,
   MoonIcon,
   SunIcon,
 } from "./Icons";
@@ -110,7 +112,7 @@ const Navbar = () => {
           <CustomLink className="mr-4" href="/" title="Home" />
           <CustomLink className="mx-4" href="/about" title="About" />
           <CustomLink className="mx-4" href="/projects" title="Projects" />
-          <CustomLink className="ml-4" href="/articles" title="Articles" />
+          {/* <CustomLink className="ml-4" href="/articles" title="Articles" /> */}
         </nav>
         <nav
           className="flex items-center justify-center flex-wrap lg:mt-2
@@ -130,33 +132,33 @@ const Navbar = () => {
           <motion.a
             target={"_blank"}
             className="w-7 mx-3 bg-light rounded-full"
-            href="https://medium.com/@travis.lord"
+            href="https://www.linkedin.com/in/nizan-dhiaulhaq-64b7b921b/"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my Medium profile"
+            aria-label="Checkout my LinkedIn profile"
           >
-            <MediumIcon />
+            <LinkedInIcon />
           </motion.a>
 
-          <motion.a
+          {/* <motion.a
             target={"_blank"}
             className="w-7 mx-3"
-            href="https://dev.to/lilxyzz"
+            href="https://www.instagram.com/nizanhulq/"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my Dev.to profile"
+            aria-label="Checkout my Instagram profile"
           >
             <DevIcon />
-          </motion.a>
+          </motion.a> */}
 
-          <motion.a
+          {/* <motion.a
             target={"_blank"}
             className="w-7 mx-3"
             href="https://dev.to/lilxyzz"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="My Dev.to profile"
-          ></motion.a>
+          ></motion.a> */}
 
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -221,7 +223,7 @@ const Navbar = () => {
             <motion.a
               target={"_blank"}
               className="w-6 mr-3"
-              href="https://github.com/lilxyzz"
+              href="https://github.com/nizanhulq"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Checkout my Github profile"
@@ -232,31 +234,31 @@ const Navbar = () => {
             <motion.a
               target={"_blank"}
               className="w-6 mx-3 bg-light rounded-full"
-              href="https://medium.com/@travis.lord"
+              href="https://www.linkedin.com/in/nizan-dhiaulhaq-64b7b921b/"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              aria-label="Checkout my Medium profile"
+              aria-label="Checkout my LinkedIn profile"
             >
-              <MediumIcon />
+              <LinkedInIcon />
             </motion.a>
-            <motion.a
+            {/* <motion.a
               target={"_blank"}
               className="w-6 mx-3"
-              href="https://dev.to/lilxyzz"
+              href="https://www.instagram.com/nizanhulq/"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              aria-label="Checkout my Dev.to profile"
+              aria-label="Checkout my Instagram profile"
             >
-              <DevIcon />
-            </motion.a>
-            <motion.a
+              <InstagramIcon />
+            </motion.a> */}
+            {/* <motion.a
               target={"_blank"}
               className="w-6 mx-3"
               href="https://dev.to/lilxyzz"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="My Dev.to profile"
-            ></motion.a>
+            ></motion.a> */}
 
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}

@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import profile from "../../public/images/profile/Riley.png";
+import profile from "../../public/images/profile/nizan.png";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import AnimatedText from "@/components/AnimatedText";
@@ -35,6 +35,15 @@ function AnimatedNumberFramerMotion({ value }) {
 }
 
 export default function About() {
+  const startDate = new Date("2020-09-01T00:00:00");
+  const [days, setDays] = useState(0);
+
+  useEffect(() => {
+    const now = new Date();
+    const diffTime = now - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    setDays(diffDays);
+  }, []);
   return (
     <>
       <Head>
@@ -64,27 +73,29 @@ export default function About() {
                 BIOGRAPHY
               </h2>
               <p className="font-medium ">
-                I'm Riley, a dedicated web developer at Stellar Innovations,
-                where I specialize in creating dynamic and user-centric web
-                experiences. With over a decade of experience in the industry, I
-                have honed my skills in both front-end and back-end
-                technologies, allowing me to deliver responsive and
-                high-performance websites and applications.
+                I’m Nizan Dhiaulhaq, a backend engineer who also enjoys bringing
+                full-stack ideas to life. Currently, I work at Voltras
+                International, where I build scalable backend systems using
+                Java, Spring Boot, and microservices architecture to power a B2B
+                travel platform. I’ve developed and maintained gateway services
+                that integrate with major airline APIs like Sabre and other
+                GDS/NDC suppliers, helping streamline real-time booking
+                experiences.
               </p>
               <p className="my-4 font-medium">
-                At Stellar Innovations, I've had the opportunity to work on
-                numerous high-profile projects that have challenged and expanded
-                my expertise. My technical skill set includes HTML, CSS,
-                JavaScript, React, and Node.js, among other technologies. One of
-                my notable projects involved developing a comprehensive
-                e-commerce platform that streamlined the user experience and
-                significantly boosted the client's sales. Another project I’m
-                particularly proud of was creating an interactive web
-                application for a major event, which received widespread acclaim
-                for its intuitive design and seamless performance.
+                Before diving deep into backend engineering, I built several
+                full-stack systems using Laravel, CodeIgniter, React.js, and
+                Tailwind CSS—from user-facing dashboards to internal management
+                tools. That journey gave me a strong sense of how frontend and
+                backend decisions shape user experience and system flow as a
+                whole. I love solving messy backend challenges, optimizing data
+                flows, and writing code that quietly makes everything else run
+                smoother.
               </p>
               <p className="my-4 font-medium">
-                P.s I'm a big fan of anime and not a real person ✌️.
+                P.S. I still get excited over a clean UI, a clever React
+                component, or a perfectly placed anime reference. Also, not an
+                AI-generated person—promise 😄.
               </p>
             </div>
             <div
@@ -114,7 +125,7 @@ export default function About() {
             >
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={1461} />+
+                  <AnimatedNumberFramerMotion value={days} />+
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -126,7 +137,7 @@ export default function About() {
 
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={500} />
+                  <AnimatedNumberFramerMotion value={1000} />
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -138,7 +149,7 @@ export default function About() {
 
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={499} />
+                  <AnimatedNumberFramerMotion value={999} />
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 

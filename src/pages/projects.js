@@ -231,10 +231,10 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects | By NexTemp</title>
+        <title>Projects | By Nizan</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Nizan's portfolio showcasing web development projects and skills."
         />
       </Head>
 
@@ -244,7 +244,7 @@ export default function Projects() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Imagination Transforms the World ✨"
+            text="All Projects Done with Joy ✨"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
           <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
