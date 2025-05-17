@@ -13,16 +13,7 @@ const Footer = () => {
         <span>&copy; {new Date().getFullYear()}</span>
 
         <div className="flex items-center lg:py-2 ml-2">
-          Built <span className="text-2xl px-1"></span>
-          {""}
-          by&nbsp;
-          <Link
-            href="https://travislord.xyz/"
-            className="underline underline-offset-2"
-          >
-            Travis Lord
-          </Link>
-          &nbsp;and Modified <span className="text-2xl px-1"></span>
+          Build <span className="text-2xl px-1"></span>
           {""}
           by&nbsp;
           <Link
@@ -30,6 +21,15 @@ const Footer = () => {
             className="underline underline-offset-2"
           >
             Nizan D. yaulhaq
+          </Link>
+          &nbsp;and Template <span className="text-2xl px-1"></span>
+          {""}
+          by&nbsp;
+          <Link
+            href="https://travislord.xyz/"
+            className="underline underline-offset-2"
+          >
+            Travis Lord
           </Link>
         </div>
       </Layout>

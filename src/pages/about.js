@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import profile from "../../public/images/profile/nizan.png";
+import profile from "../../public/images/profile/nizan's anime face png.png";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Skills from "@/components/Skills";

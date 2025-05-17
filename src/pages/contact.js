@@ -21,28 +21,20 @@ export default function About() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const myForm = e.target;
-    const formData = new FormData(myForm);
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
+    // Construct WhatsApp message
+    const whatsappMessage = `Hello! I'm ${formData.name} (${formData.email}).\n${formData.message}`;
 
-      if (response.ok) {
-        // Handle success, e.g., redirect to a thank you page
-        router.push("/thanks");
-      } else {
-        // Handle error
-        console.error("Form submission failed!", response);
-      }
-    } catch (error) {
-      // Handle error
-      console.error("An error occurred during form submission:", error);
-    }
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Replace with your WhatsApp number (include country code, remove any +, 0, or spaces)
+    const whatsappNumber = "6287776917317"; // Example: Indonesia +62 812-3456-7890
+
+    // Open WhatsApp with the pre-filled message
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      "_blank"
+    );
   };
 
   return (

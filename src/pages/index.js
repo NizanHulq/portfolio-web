@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
-import profilePic from "../../public/images/profile/nizan.png";
+import profilePic from "../../public/images/profile/nizan's anime face png.png";
 
 export default function Home() {
   return (
