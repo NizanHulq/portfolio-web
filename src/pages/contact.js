@@ -40,10 +40,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>NexTemp Built with Nextjs</title>
+        <title>Nizan's Portfoloio</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Web Portfolio of Nizan showcasing projects and skills."
         />
       </Head>
 

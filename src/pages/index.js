@@ -50,7 +50,7 @@ export default function Home() {
 
               <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
                 I’m a Backend Developer and Fullstack Web Developer who loves
-                clean code and meaningful systems and I love Data Sciences.
+                clean code and meaningful systems and I love Blockhain.
               </p>
               <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
                 <Link
