@@ -22,15 +22,6 @@ const Footer = () => {
           >
             Nizan D. yaulhaq
           </Link>
-          &nbsp;and Template <span className="text-2xl px-1"></span>
-          {""}
-          by&nbsp;
-          <Link
-            href="https://travislord.xyz/"
-            className="underline underline-offset-2"
-          >
-            Travis Lord
-          </Link>
         </div>
       </Layout>
     </footer>

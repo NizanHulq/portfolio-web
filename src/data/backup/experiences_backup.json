@@ -1,0 +1,38 @@
+{
+    "experiences": [
+        {
+            "position": "Backend Developer",
+            "company": "PT Voltras International",
+            "companyLink": "https://voltras.co.id/",
+            "time": "Dec 2024 - Present",
+            "address": "Yogyakarta, Indonesia",
+            "work": "Successfully developed and deployed a new Airline Gateway Service from scratch, integrating external airline supplier APIs into our system to support seamless communication and data exchange—used directly by all end users. Maintained and optimized our existing gateway for Sabre GDS integration, ensuring smooth real-time interactions with airline suppliers. Solved a critical pricing issue involving currency conversion and rounding mismatches, delivering a hybrid solution that preserved backend integrity while aligning with user display needs. Proposed and implemented an efficient alternative to caching by optimizing database queries and using a scheduler to manage data retrieval within resource constraints."
+        },
+        {
+            "position": "Frontend Web Developer",
+            "company": "PT Citra Numusi Birawa",
+            "companyLink": "https://www.instagram.com/cinurawa.id/",
+            "time": "Aug 2023 - Jan 2024",
+            "address": "Remote, Indonesia",
+            "work": "Developed projects as part of the final project requirement for graduation from UGM. Implemented interface designs created by the UI/UX designer using Laravel, jQuery, and Bootstrap CSS. Improved website performance, achieving an average total blocking time of 0.002 ms for JavaScript script performance."
+        },
+        {
+            "position": "Software Engineer Intern",
+            "company": "PT DW International (Stone Depot)",
+            "companyLink": "https://stonedepot.co.id/",
+            "time": "Feb 2023 - Feb 2024",
+            "address": "Cirebon, Indonesia",
+            "work": "Developed and maintained internal ERP systems using Laravel, CodeIgniter frameworks, and React Js. Migrated the internal ERP system from CodeIgniter to Laravel within three months, working as one of only two developers. Demonstrated strong front-end and back-end development skills with proficiency in HTML, CSS, JavaScript, PHP, and MySQL. Created user-friendly and efficient web applications that met the needs of clients and users."
+        },
+        {
+            "position": "Assistant Lecturer",
+            "company": "Universitas Gadjah Mada (UGM)",
+            "companyLink": "https://trpl.sv.ugm.ac.id/",
+            "time": "Aug 2022 - Des 2023",
+            "address": "Yogyakarta, Indonesia",
+            "work": "Assist lecturers in teaching basic programming courses using python and web programming using the laravel framework. Support teaching lecturers in delivering high-quality education by collaborating with them on course design, content development, and assessment methods. Facilitate student learning and academic success by creating a supportive and engaging learning environment, responding to their queries and concerns, and monitoring their progress and performance. Assist in preparing materials and resources for the lecturers by researching relevant topics, compiling information, and producing syllabi, assignments, exams, and presentations. Provide feedback and guidance to students by grading their work, offering constructive comments, and suggesting areas for improvement."
+        }
+    ],
+    "backup_date": "2026-01-19T17:37:52+07:00",
+    "source_file": "src/components/Experience.js"
+}

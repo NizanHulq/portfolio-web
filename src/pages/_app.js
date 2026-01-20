@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import AIChatbot, { ChatProvider } from "@/components/AIChatbot";
 import "@/styles/globals.css";
 import { AnimatePresence } from "framer-motion";
 import { Montserrat } from "next/font/google";
@@ -21,15 +22,20 @@ export default function App({ Component, pageProps }) {
         <link rel="preconnect" href="https://cdnjs.cloudflare.com"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       </Head>
-      <main
-        className={`${montserrat.variable} font-mont  bg-light dark:bg-dark w-full min-h-screen h-full`}
-      >
-        <Navbar />
-        <AnimatePresence initial={false} mode="wait">
-          <Component key={router.asPath} {...pageProps} />
-        </AnimatePresence>
-        <Footer />
-      </main>
+      <ChatProvider>
+        <main
+          className={`${montserrat.variable} font-mont  bg-light dark:bg-dark w-full min-h-screen h-full`}
+        >
+          <Navbar />
+          <AnimatePresence initial={false} mode="wait">
+            <Component key={router.asPath} {...pageProps} />
+          </AnimatePresence>
+          <Footer />
+          
+          {/* AI Chatbot - Floating Bubble */}
+          <AIChatbot />
+        </main>
+      </ChatProvider>
     </>
   );
 }

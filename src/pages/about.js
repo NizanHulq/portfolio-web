@@ -9,6 +9,7 @@ import Experience from "@/components/Experience";
 import AnimatedText from "@/components/AnimatedText";
 import TransitionEffect from "@/components/TransitionEffect";
 import { HireMe2 } from "@/components/HireMe2";
+import { getExperiences, getSetting, getSkills } from "@/lib/supabase";
 
 function AnimatedNumberFramerMotion({ value }) {
   const ref = useRef(null);
@@ -34,7 +35,7 @@ function AnimatedNumberFramerMotion({ value }) {
   return <span ref={ref} />;
 }
 
-export default function About() {
+export default function About({ experiences, cvLink, skills }) {
   const startDate = new Date("2020-09-01T00:00:00");
   const [days, setDays] = useState(0);
 
@@ -73,11 +74,11 @@ export default function About() {
                 BIOGRAPHY
               </h2>
               <p className="font-medium ">
-                I’m Nizan Dhiaulhaq, a backend engineer who also enjoys bringing
+                I'm Nizan Dhiaulhaq, a backend engineer who also enjoys bringing
                 full-stack ideas to life. Currently, I work at Voltras
                 International, where I build scalable backend systems using
                 Java, Spring Boot, and microservices architecture to power a B2B
-                travel platform. I’ve developed and maintained gateway services
+                travel platform. I've developed and maintained gateway services
                 that integrate with major airline APIs like Sabre and other
                 GDS/NDC suppliers, helping streamline real-time booking
                 experiences.
@@ -85,7 +86,7 @@ export default function About() {
               <p className="my-4 font-medium">
                 Before diving deep into backend engineering, I built several
                 full-stack systems using Laravel, CodeIgniter, React.js, and
-                Tailwind CSS—from user-facing dashboards to internal management
+                Tailwind CSS. From user-facing dashboards to internal management
                 tools. That journey gave me a strong sense of how frontend and
                 backend decisions shape user experience and system flow as a
                 whole. I love solving messy backend challenges, optimizing data
@@ -162,10 +163,37 @@ export default function About() {
             <HireMe2 />
           </div>
 
-          <Skills />
-          <Experience />
+          <Skills skills={skills} />
+          <Experience experiences={experiences} cvLink={cvLink} />
         </Layout>
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+    const [experiences, cvLink, skills] = await Promise.all([
+      getExperiences(),
+      getSetting('cv_link'),
+      getSkills()
+    ]);
+
+    return {
+      props: {
+        experiences: experiences || [],
+        cvLink: cvLink || "https://drive.google.com/file/d/158AlzKCYZFRP69b5v3hx9MrhpmnWeHwx/view?usp=sharing",
+        skills: skills || []
+      }
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        experiences: [],
+        cvLink: "https://drive.google.com/file/d/158AlzKCYZFRP69b5v3hx9MrhpmnWeHwx/view?usp=sharing",
+        skills: []
+      }
+    };
+  }
 }

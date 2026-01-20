@@ -35,13 +35,49 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   );
 };
 
-const Experience = () => {
+const Experience = ({ experiences = [], cvLink = "#" }) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "center start"],
   });
+
+  // Fallback to hardcoded data if no experiences provided (for development)
+  const displayExperiences = experiences.length > 0 ? experiences : [
+    {
+      position: "Backend Developer",
+      company: "PT Voltras International",
+      company_link: "https://voltras.co.id/",
+      time_period: "Dec 2024 - Present",
+      address: "Yogyakarta, Indonesia",
+      description: "Successfully developed and deployed a new Airline Gateway Service from scratch, integrating external airline supplier APIs into our system to support seamless communication and data exchange—used directly by all end users. Maintained and optimized our existing gateway for Sabre GDS integration, ensuring smooth real-time interactions with airline suppliers. Solved a critical pricing issue involving currency conversion and rounding mismatches, delivering a hybrid solution that preserved backend integrity while aligning with user display needs. Proposed and implemented an efficient alternative to caching by optimizing database queries and using a scheduler to manage data retrieval within resource constraints."
+    },
+    {
+      position: "Frontend Web Developer",
+      company: "PT Citra Numusi Birawa",
+      company_link: "https://www.instagram.com/cinurawa.id/",
+      time_period: "Aug 2023 - Jan 2024",
+      address: "Remote, Indonesia",
+      description: "Developed projects as part of the final project requirement for graduation from UGM. Implemented interface designs created by the UI/UX designer using Laravel, jQuery, and Bootstrap CSS. Improved website performance, achieving an average total blocking time of 0.002 ms for JavaScript script performance."
+    },
+    {
+      position: "Software Engineer Intern",
+      company: "PT DW International (Stone Depot)",
+      company_link: "https://stonedepot.co.id/",
+      time_period: "Feb 2023 - Feb 2024",
+      address: "Cirebon, Indonesia",
+      description: "Developed and maintained internal ERP systems using Laravel, CodeIgniter frameworks, and React Js. Migrated the internal ERP system from CodeIgniter to Laravel within three months, working as one of only two developers. Demonstrated strong front-end and back-end development skills with proficiency in HTML, CSS, JavaScript, PHP, and MySQL. Created user-friendly and efficient web applications that met the needs of clients and users."
+    },
+    {
+      position: "Assistant Lecturer",
+      company: "Universitas Gadjah Mada (UGM)",
+      company_link: "https://trpl.sv.ugm.ac.id/",
+      time_period: "Aug 2022 - Des 2023",
+      address: "Yogyakarta, Indonesia",
+      description: "Assist lecturers in teaching basic programming courses using python and web programming using the laravel framework. Support teaching lecturers in delivering high-quality education by collaborating with them on course design, content development, and assessment methods. Facilitate student learning and academic success by creating a supportive and engaging learning environment, responding to their queries and concerns, and monitoring their progress and performance. Assist in preparing materials and resources for the lecturers by researching relevant topics, compiling information, and producing syllabi, assignments, exams, and presentations. Provide feedback and guidance to students by grading their work, offering constructive comments, and suggesting areas for improvement."
+    }
+  ];
 
   return (
     <div className="my-64">
@@ -57,44 +93,17 @@ const Experience = () => {
         />
 
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
-          <Details
-            position="Assistant Lecturer"
-            company="Universitas Gadjah Mada (UGM)"
-            time="Aug 2022 - Des 2023"
-            address="Ygoyakarta, Indonesia"
-            companyLink="https://trpl.sv.ugm.ac.id/"
-            work="Assist lecturers in teaching basic programming courses using python and web programming using the laravel framework. Support teaching lecturers in delivering high-quality education by collaborating with them on course design, content development, and
-assessment methods. Facilitate student learning and academic success by creating a supportive and engaging learning environment, responding to their
-queries and concerns, and monitoring their progress and performance. Assist in preparing materials and resources for the lecturers by researching relevant topics, compiling information, and producing
-syllabi, assignments, exams, and presentations. Provide feedback and guidance to students by grading their work, offering constructive comments, and suggesting areas for improvement."
-          />
-
-          <Details
-            position="Software Engineer Intern"
-            company="PT DW International (Stone Depot)"
-            time="Feb 2023 - Feb 2024"
-            address="Cirebon, Indonesia"
-            companyLink="https://stonedepot.co.id/"
-            work="Developed and maintained internal ERP systems using Laravel, CodeIgniter frameworks, and React Js. Migrated the internal ERP system from CodeIgniter to Laravel within three months, working as one of only two developers. Demonstrated strong front-end and back-end development skills with proficiency in HTML, CSS, JavaScript, PHP, and MySQL. Created user-friendly and efficient web applications that met the needs of clients and users."
-          />
-
-          <Details
-            position="Frontend Web Developer"
-            company="PT Citra Numusi Birawa"
-            time="Aug 2023 - Jan 2024"
-            address="Remote, Indonesia"
-            companyLink="https://www.instagram.com/cinurawa.id/"
-            work="Developed projects as part of the final project requirement for graduation from UGM. Implemented interface designs created by the UI/UX designer using Laravel, jQuery, and Bootstrap CSS. Improved website performance, achieving an average total blocking time of 0.002 ms for JavaScript script performance."
-          />
-
-          <Details
-            position="Backend Developer"
-            company="PT Voltras International"
-            time="Dec 2024 - Present"
-            address="Yogyakarta, Indonesia"
-            companyLink="https://voltras.co.id/"
-            work="Successfully developed and deployed a new Airline Gateway Service from scratch, integrating external airline supplier APIs into our system to support seamless communication and data exchange—used directly by all end users. Maintained and optimized our existing gateway for Sabre GDS integration, ensuring smooth real-time interactions with airline suppliers. Solved a critical pricing issue involving currency conversion and rounding mismatches, delivering a hybrid solution that preserved backend integrity while aligning with user display needs. Proposed and implemented an efficient alternative to caching by optimizing database queries and using a scheduler to manage data retrieval within resource constraints."
-          />
+          {displayExperiences.map((exp, index) => (
+            <Details
+              key={exp.id || index}
+              position={exp.position}
+              company={exp.company}
+              companyLink={exp.company_link}
+              time={exp.time_period}
+              address={exp.address}
+              work={exp.description}
+            />
+          ))}
         </ul>
       </div>
       <div className="mt-40 flex items-center justify-between gap-3 grid-cols-2">
@@ -110,7 +119,7 @@ syllabi, assignments, exams, and presentations. Provide feedback and guidance to
           View Projects
         </Link>
         <Link
-          href="https://drive.google.com/file/d/158AlzKCYZFRP69b5v3hx9MrhpmnWeHwx/view?usp=sharing"
+          href={cvLink}
           target={"_blank"}
           className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 

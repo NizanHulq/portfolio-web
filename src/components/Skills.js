@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 
+// Fallback skills data if database fetch fails
+const fallbackSkills = [
+  { name: "HTML", x_position: "-12vw", y_position: "0vw" },
+  { name: "JavaScript", x_position: "12vw", y_position: "0vw" },
+  { name: "PHP", x_position: "0vw", y_position: "10vw" },
+  { name: "Tailwind", x_position: "0vw", y_position: "-10vw" },
+  { name: "Java", x_position: "-18vw", y_position: "-12vw" },
+  { name: "Spring Boot", x_position: "18vw", y_position: "-12vw" },
+  { name: "React Js", x_position: "-20vw", y_position: "8vw" },
+  { name: "Next Js", x_position: "20vw", y_position: "8vw" },
+  { name: "Laravel", x_position: "0vw", y_position: "-18vw" },
+  { name: "PostgreSQL", x_position: "-12vw", y_position: "-22vw" },
+  { name: "Oracle", x_position: "12vw", y_position: "-22vw" },
+  { name: "Git", x_position: "-32vw", y_position: "-5vw" },
+  { name: "Docker", x_position: "32vw", y_position: "-5vw" },
+  { name: "Kubernetes", x_position: "-28vw", y_position: "12vw" },
+  { name: "Grafana", x_position: "28vw", y_position: "12vw" },
+  { name: "Solidity", x_position: "0vw", y_position: "22vw" },
+];
+
 const Skill = ({ name, x, y }) => {
   const ref = useRef(null);
   return (
@@ -20,8 +40,12 @@ const Skill = ({ name, x, y }) => {
   );
 };
 
-const Skills = () => {
+const Skills = ({ skills = [] }) => {
   const ref = useRef(null);
+  
+  // Use database skills or fallback
+  const displaySkills = skills.length > 0 ? skills : fallbackSkills;
+  
   return (
     <>
       <h2 className="font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32">
@@ -44,17 +68,14 @@ const Skills = () => {
           Web
         </motion.div>
 
-        <Skill name="HTML" x="-20vw" y="2vw" />
-        <Skill name="Tailwind" x="-5vw" y="-10vw" />
-        <Skill name="JavaScript" x="20vw" y="6vw" />
-        <Skill name="PHP" x="0vw" y="12vw" />
-        <Skill name="Java" x="-20vw" y="-15vw" />
-        <Skill name="Spring Boot" x="15vw" y="-12vw" />
-        <Skill name="Git" x="-35vw" y="-5vw" />
-        <Skill name="Laravel" x="32vw" y="-5vw" />
-        <Skill name="PostgreSQL" x="0vw" y="-20vw" />
-        <Skill name="React Js" x="-25vw" y="18vw" />
-        <Skill name="Docker" x="28vw" y="18vw" />
+        {displaySkills.map((skill, index) => (
+          <Skill 
+            key={skill.id || index}
+            name={skill.name} 
+            x={skill.x_position} 
+            y={skill.y_position} 
+          />
+        ))}
       </div>
     </>
   );

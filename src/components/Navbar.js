@@ -14,6 +14,7 @@ import {
 } from "./Icons";
 import { motion } from "framer-motion";
 import { useThemeSwitch } from "./Hooks/useThemeSwitch";
+import { useChatContext } from "./AIChatbot";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -71,9 +72,16 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
 const Navbar = () => {
   const [mode, setMode] = useThemeSwitch();
   const [isOpen, setIsOpen] = useState(false);
+  const chatContext = useChatContext();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleChatClick = () => {
+    if (chatContext) {
+      chatContext.openChat();
+    }
   };
 
   return (
@@ -118,6 +126,22 @@ const Navbar = () => {
           className="flex items-center justify-center flex-wrap lg:mt-2
       "
         >
+          {/* Ask Nizan's Assistant Button */}
+          <motion.button
+            onClick={handleChatClick}
+            className="mr-4 px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-400 
+              text-dark font-semibold text-sm flex items-center gap-2 
+              hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Ask Nizan's AI Assistant"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            Ask Nizan's Assistant
+          </motion.button>
+
           <motion.a
             target={"_blank"}
             className="w-7 mr-3"
@@ -139,26 +163,6 @@ const Navbar = () => {
           >
             <LinkedInIcon />
           </motion.a>
-
-          {/* <motion.a
-            target={"_blank"}
-            className="w-7 mx-3"
-            href="https://www.instagram.com/nizanhulq/"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my Instagram profile"
-          >
-            <DevIcon />
-          </motion.a> */}
-
-          {/* <motion.a
-            target={"_blank"}
-            className="w-7 mx-3"
-            href="https://dev.to/lilxyzz"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="My Dev.to profile"
-          ></motion.a> */}
 
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -215,6 +219,21 @@ const Navbar = () => {
               href="/contact"
               title="Contact"
             />
+            
+            {/* Mobile: Ask Assistant Button */}
+            <button
+              onClick={() => {
+                handleClick();
+                if (chatContext) chatContext.openChat();
+              }}
+              className="mt-4 px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-400 
+                text-dark font-semibold text-sm flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+              Ask Nizan's Assistant
+            </button>
           </nav>
           <nav
             className="flex items-center justify-center  mt-2
@@ -241,24 +260,6 @@ const Navbar = () => {
             >
               <LinkedInIcon />
             </motion.a>
-            {/* <motion.a
-              target={"_blank"}
-              className="w-6 mx-3"
-              href="https://www.instagram.com/nizanhulq/"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Checkout my Instagram profile"
-            >
-              <InstagramIcon />
-            </motion.a> */}
-            {/* <motion.a
-              target={"_blank"}
-              className="w-6 mx-3"
-              href="https://dev.to/lilxyzz"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="My Dev.to profile"
-            ></motion.a> */}
 
             <button
               onClick={() => setMode(mode === "light" ? "dark" : "light")}

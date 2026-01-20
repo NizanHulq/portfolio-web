@@ -44,13 +44,14 @@ export default function Home() {
               />
               <div className="flex w-1/2 w-full items-center items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
                 <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
-                  Engineering the invisible—but essential—part of your product.
+                  Building the backend magic ✨ that makes products actually work.
                 </h2>
               </div>
 
               <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
-                I’m a Backend Developer and Fullstack Web Developer who loves
-                clean code and meaningful systems and I love Blockhain.
+                Backend-first, fullstack by nature. I craft robust systems that scale,
+                APIs that just make sense, and lately? Diving deep into Web3 -
+                because the future of the internet is decentralized, and I want to build it. 🚀
               </p>
               <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
                 <Link

@@ -1,0 +1,155 @@
+{
+    "projects": [
+        {
+            "title": "Voltras Agent Network",
+            "type": "Backend Development - Airline Booking",
+            "category": "web2",
+            "tools": "Java | Springboot | PostgreSQL | Docker | Kubernetes",
+            "summary": "As a Backend Engineer, I work on building and maintaining core services that power the airline booking ecosystem, primarily using Java and Spring Boot in a microservices architecture. Successfully developed and deployed a new Airline Gateway Service from scratch, which converts and standardizes external airline API formats to match our system's internal format—used directly by all end users. Maintained and optimized our existing gateway for Sabre GDS integration, ensuring smooth real-time interactions with airline suppliers. Solved a critical pricing issue involving currency conversion and rounding mismatches, delivering a hybrid solution that preserved backend integrity while aligning with user display needs. Proposed and implemented an efficient alternative to caching by optimizing database queries and using a scheduler to manage data retrieval within resource constraints.",
+            "image": "van.png",
+            "link": "https://www.travelagent.co.id/",
+            "github": "/404/",
+            "is_featured": true,
+            "order_index": 1
+        },
+        {
+            "title": "Layarjakti",
+            "type": "Fullstack Development - Web Platform",
+            "category": "web2",
+            "tools": "Next JS | Typescript | TailwindCSS | Firebase",
+            "summary": "Layarjakti is a web platform developed for the Kejaksaan Tinggi Negeri in Yogyakarta, designed to streamline case submissions and reporting for local Kantor Kejaksaan Negeri across the DI Yogyakarta region. For this project, I was responsible for adding new features, including a reporting function and a report history tracker within the Layarjakti dashboard. My work spanned the entire development process, from designing the UI to integrating it with Firestore for data storage. The project was built using Next.js with TypeScript, paired with Firestore as the database, resulting in a dynamic and secure platform that supports efficient data handling for legal case management.",
+            "image": "layarjakti.png",
+            "link": "https://layarjakti.id/",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 2
+        },
+        {
+            "title": "Antony Jamu",
+            "type": "Frontend Development - Landing Page",
+            "category": "web2",
+            "tools": "HTML | CSS | JavaScript | Bootstrap",
+            "summary": "This freelance project was developed as a promotional landing page for Antony Jamu, an instant herbal drink brand. Our team consisted of two developers: one responsible for the backend, while I handled the frontend. My role included designing the UI and building the frontend structure of the site. The website was created using HTML, CSS with Bootstrap, and plain JavaScript without any additional libraries, making it a simple and effective solution that meets the client's needs. It was an enjoyable project to work on in my spare time, allowing me to keep my coding skills sharp while creating a clean and engaging landing page.",
+            "image": "jamu.png",
+            "link": "/projects/clay-gatsby-theme",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 3
+        },
+        {
+            "title": "Harsa Edu",
+            "type": "Frontend Development - LMS",
+            "category": "web2",
+            "tools": "Javascript | React JS | Tailwind CSS",
+            "summary": "Harsa.edu is a web-based application designed to assist instructors and administrators in managing online courses available on the Harsa Learning Management System, which is mobile-based, along with content such as classes, categories, and FAQs. Harsa Edu is a web application created to fulfill the final project assignment for independent studies at Alterra Academy. As a frontend developer, I successfully developed several features designed by the UI/UX team and shared by the head of the frontend division. This collaborative effort showcases the practical application of skills and teamwork, culminating in a functional and user-centric educational platform.",
+            "image": "harsa.png",
+            "link": "https://harsa-frontend-vercel.vercel.app/",
+            "github": "https://github.com/HarsaEdu/harsa-frontend.git",
+            "is_featured": true,
+            "order_index": 4
+        },
+        {
+            "title": "Propertio",
+            "type": "Frontend Development - Property Information System",
+            "category": "web2",
+            "tools": "Laravel | Jquery | CSS Bootstrap",
+            "summary": "This is a project that I used to complete my final project as a graduation requirement and also to implement a business proposal idea that my senior had. Here I became a frontend developer who implemented all the interface designs that had been made by the UI UX designer in this project. This project uses Laravel framework, Jquery and Bootstrap CSS.",
+            "image": "propertio.png",
+            "link": "https://beta.propertio.id/",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 5
+        },
+        {
+            "title": "SkillBridge",
+            "type": "Frontend Development - Landing Page",
+            "category": "web2",
+            "tools": "ReactJS | Tailwind CSS | Cakra UI",
+            "summary": "Skillbridge is a learning management system (LMS) website created to meet the needs of business units in the training field. it is created using javascript, react js framework, and tailwind CSS. I worked on the frontend for the landing page side of this project. The frontend is done with React JS and tailwind CSS using UI components from Cakra UI.",
+            "image": "skillbridge.png",
+            "link": "https://skillbridge-murex.vercel.app/",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 6
+        },
+        {
+            "title": "Indococo Internal System",
+            "type": "Fullstack Development - ERP System",
+            "category": "web2",
+            "tools": "Laravel | Bootstrap | Jquery",
+            "summary": "This is my second project as a Fullstack Developer at PT. D&W International. This is a project to create an admin dashboard for data entry of the company with the brand Indococo so that later the data can be processed and visualized according to needs. The system created here is tailored to the needs of management on the Indococo brand. This project uses the Laravel framework and CSS Bootstrap.",
+            "image": "indococo.png",
+            "link": "/404/",
+            "github": "/404/",
+            "is_featured": true,
+            "order_index": 7
+        },
+        {
+            "title": "Stone Depot Internal System",
+            "type": "Fullstack Development - ERP System",
+            "category": "web2",
+            "tools": "CodeIgniter | Jquery | CSS Bootstrap",
+            "summary": "This is my project as a Fullstack developer at PT. D&W International. This is a project to create an admin dashboard for data entry of the company with the brand Stonedepot so that the data collected can be processed and visualized according to the needs. This project uses the Codeigniter framework and CSS Bootstrap.",
+            "image": "stonedepot.png",
+            "link": "/404/",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 8
+        },
+        {
+            "title": "Telaga Menjer Website",
+            "type": "Wordpress Web Development - Landing Page",
+            "category": "web2",
+            "tools": "Wordpress | Elementor | CSS",
+            "summary": "I have developed the KKN Telaga Menjer Wonosobo website, as depicted in the image above. I crafted this website utilizing WordPress and Elementor. The motivation behind creating this KKN website was to provide a promotional platform for Telaga Menjer tourism, as well as for the Maron and Tlogo villages located in the Wonosobo Regency.",
+            "image": "kkn.png",
+            "link": "/404/",
+            "github": "/404/",
+            "is_featured": false,
+            "order_index": 9
+        },
+        {
+            "title": "Consic Website",
+            "type": "Fullstack Development - Landing Page Dynamic",
+            "category": "web2",
+            "tools": "HTML | CSS | JS | PHP | MVC",
+            "summary": "The goal of this freelance project is to develop a website that provides information and tickets for music concerts. The website is coded in PHP, a native programming language, and follows the MVC design pattern.",
+            "image": "consic.png",
+            "link": "/404/",
+            "github": "https://github.com/NizanHulq/project-consic.git",
+            "is_featured": true,
+            "order_index": 10
+        },
+        {
+            "title": "Big Data Mobility Website",
+            "type": "Frontend Development - Website",
+            "category": "web2",
+            "tools": "ReactJS | Tailwind CSS | Kepler.gl",
+            "summary": "This project is an initiative from the Industrial Lecturer who originated from Data Ins Company. This is a web-based project that is helpful for displaying GIS (Geographic Information System) from data that has been examined beforehand. This project employs React Js Framework and kepler.gl library.",
+            "image": "datains.png",
+            "link": "/404/",
+            "github": "https://github.com/NizanHulq/mobility-maps-app.git",
+            "is_featured": false,
+            "order_index": 11
+        },
+        {
+            "title": "Amanah Archery App",
+            "type": "Flutter App - Mobile App",
+            "category": "web2",
+            "tools": "Flutter | Dart | Firebase",
+            "summary": "I developed this project as part of my Industrial Practice internship at a software house company in Surabaya. The project involved creating a mobile application using Flutter. The application was designed to monitor the attendance, training, and scoring of archery clubs. I used Firebase database to implement CRUD data features for the application.",
+            "image": "archery3.png",
+            "link": "/404/",
+            "github": "https://github.com/arkefallen/archery-club.git",
+            "is_featured": false,
+            "order_index": 12
+        }
+    ],
+    "settings": {
+        "cv_link_experience": "https://drive.google.com/file/d/158AlzKCYZFRP69b5v3hx9MrhpmnWeHwx/view?usp=sharing",
+        "cv_link_projects": "https://drive.google.com/file/d/1qe4frUtGGsM1D60s5l5uQX4YTdQ1rw-F/view?usp=sharing",
+        "whatsapp_number": "6287776917317"
+    },
+    "backup_date": "2026-01-19T17:37:52+07:00",
+    "source_file": "src/pages/projects.js"
+}

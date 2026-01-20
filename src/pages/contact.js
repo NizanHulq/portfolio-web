@@ -3,12 +3,9 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import AnimatedText from "@/components/AnimatedText";
 import TransitionEffect from "@/components/TransitionEffect";
-import { useRouter } from "next/router";
+import { getSetting } from "@/lib/supabase";
 
-// Netlify Form config
-
-export default function About() {
-  const router = useRouter();
+export default function Contact({ whatsappNumber }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,12 +24,12 @@ export default function About() {
     // Encode the message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
-    // Replace with your WhatsApp number (include country code, remove any +, 0, or spaces)
-    const whatsappNumber = "6287776917317"; // Example: Indonesia +62 812-3456-7890
+    // Use WhatsApp number from database (with fallback)
+    const phoneNumber = whatsappNumber || "6287776917317";
 
     // Open WhatsApp with the pre-filled message
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
       "_blank"
     );
   };
@@ -40,7 +37,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Nizan's Portfoloio</title>
+        <title>Contact | Nizan's Portfolio</title>
         <meta
           name="description"
           content="Web Portfolio of Nizan showcasing projects and skills."
@@ -62,7 +59,7 @@ I'm One Message Away 👋"
             <div className="absolute top-0 -right-5 -z-10 h-[103%] w-[101.5%] rounded-[2rem] rounded-br-3xl bg-dark dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]" />
             <div className="col-span-4 flex flex-col items-start justify-start xl:col-span-4 md:order-1 md:col-span-8">
               <h2 className="my-4 text-2xl font-bold capitalize text-primaryDark dark:text-primaryDark">
-                What’s Next?
+                What's Next?
               </h2>
 
               <div className="w-full"></div>
@@ -153,4 +150,23 @@ I'm One Message Away 👋"
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+    const whatsappNumber = await getSetting("whatsapp_number");
+
+    return {
+      props: {
+        whatsappNumber: whatsappNumber || "6287776917317",
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching whatsapp number:", error);
+    return {
+      props: {
+        whatsappNumber: "6287776917317",
+      },
+    };
+  }
 }
