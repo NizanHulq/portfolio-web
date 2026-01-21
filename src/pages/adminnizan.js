@@ -272,7 +272,8 @@ const DataTable = ({ table, config, token, onRefresh }) => {
 
             const result = await res.json();
             if (res.ok && result.success) {
-              setFormData({ ...formData, [field.key]: result.filename });
+              // Save full URL from response
+              setFormData({ ...formData, [field.key]: result.imageUrl });
               showMessage('success', 'Image uploaded!');
             } else {
               showMessage('error', result.error || 'Upload failed');
