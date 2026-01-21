@@ -141,17 +141,27 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
         href={link}
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
       >
-        <FramerImage
-          src={img}
-          className="h-auto w-full object-cover"
-          alt={title}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-          priority
-        />
+        {typeof img === 'string' ? (
+          <motion.img
+            src={img}
+            className="h-auto w-full object-cover"
+            alt={title}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          />
+        ) : (
+          <FramerImage
+            src={img}
+            className="h-auto w-full object-cover"
+            alt={title}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
+            priority
+          />
+        )}
       </Link>
       <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
         <span className="text-xl font-medium text-primary dark:text-light xs:text-base">
@@ -219,16 +229,26 @@ const Project = ({ title, type, img, link, tools, summary }) => {
         href={link}
         className="w-full cursor-pointer overflow-hidden rounded-lg"
       >
-        <FramerImage
-          src={img}
-          alt={title}
-          className="h-auto w-full"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-        />
+        {typeof img === 'string' ? (
+          <motion.img
+            src={img}
+            alt={title}
+            className="h-auto w-full"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          />
+        ) : (
+          <FramerImage
+            src={img}
+            alt={title}
+            className="h-auto w-full"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"
+          />
+        )}
       </Link>
       <div className="mt-4 flex w-full flex-col items-start justify-between">
         <span className="text-xl font-medium text-primary dark:text-light lg:text-lg md:text-base">
