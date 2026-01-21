@@ -317,10 +317,15 @@ export default function Projects({ projects = [], cvLink }) {
 
   // Helper function to get image
   const getProjectImage = (imageUrl) => {
+    // Check if it's a static import (existing images)
     if (imageMap[imageUrl]) {
       return imageMap[imageUrl];
     }
-    // If it's a full URL, return it directly (for future Supabase storage)
+    // For uploaded images, add the full path
+    if (imageUrl && !imageUrl.startsWith('/') && !imageUrl.startsWith('http')) {
+      return `/images/projects/${imageUrl}`;
+    }
+    // If it's already a full URL or path, return as is
     return imageUrl || van;
   };
 
