@@ -289,12 +289,14 @@ const DataTable = ({ table, config, token, onRefresh }) => {
             {value && (
               <div className="flex items-center gap-3">
                 <img
-                  src={`/images/projects/${value}`}
+                  src={value.startsWith('http') ? value : `/images/projects/${value}`}
                   alt="Preview"
                   className="w-20 h-20 object-cover rounded border border-gray-600"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
-                <span className="text-sm text-gray-400">{value}</span>
+                <span className="text-sm text-gray-400 break-all max-w-xs">
+                  {value.startsWith('http') ? 'Supabase Storage' : value}
+                </span>
               </div>
             )}
             {/* Upload button */}
@@ -317,7 +319,7 @@ const DataTable = ({ table, config, token, onRefresh }) => {
               type="text"
               value={value}
               onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
-              placeholder="Or enter filename manually"
+              placeholder="Image URL (auto-filled after upload)"
               className="w-full px-3 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-green-500 focus:outline-none text-sm"
             />
           </div>

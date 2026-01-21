@@ -337,15 +337,19 @@ export default function Projects({ projects = [], cvLink }) {
 
   // Helper function to get image
   const getProjectImage = (imageUrl) => {
-    // Check if it's a static import (existing images)
+    // Check if it's a static import (existing images from imageMap)
     if (imageMap[imageUrl]) {
       return imageMap[imageUrl];
     }
-    // For uploaded images, add the full path
-    if (imageUrl && !imageUrl.startsWith('/') && !imageUrl.startsWith('http')) {
+    // If it's a full URL (Supabase Storage), return as is
+    if (imageUrl && imageUrl.startsWith('http')) {
+      return imageUrl;
+    }
+    // For legacy local paths, add the full path
+    if (imageUrl && !imageUrl.startsWith('/')) {
       return `/images/projects/${imageUrl}`;
     }
-    // If it's already a full URL or path, return as is
+    // Default fallback
     return imageUrl || van;
   };
 

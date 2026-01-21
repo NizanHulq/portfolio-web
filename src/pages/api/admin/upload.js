@@ -1,6 +1,6 @@
 import formidable from 'formidable';
 import fs from 'fs';
-import path from 'path';
+import { uploadImage } from '@/lib/supabase';
 
 // Disable body parser for file upload
 export const config = {
@@ -32,26 +32,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Ensure upload directory exists
-    const uploadDir = path.join(process.cwd(), 'public', 'images', 'projects');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-
-    // Parse the form data
+    // Parse the form data with temp directory
     const form = formidable({
-      uploadDir: uploadDir,
       keepExtensions: true,
       maxFileSize: 5 * 1024 * 1024, // 5MB limit
-      filename: (name, ext, part) => {
-        // Generate unique filename
-        const timestamp = Date.now();
-        const safeName = part.originalFilename
-          .replace(/\s+/g, '-')
-          .replace(/[^a-zA-Z0-9.-]/g, '')
-          .toLowerCase();
-        return `${timestamp}-${safeName}`;
-      },
     });
 
     const [fields, files] = await form.parse(req);
@@ -64,24 +48,38 @@ export default async function handler(req, res) {
     // Validate file type
     const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
     if (!allowedTypes.includes(file.mimetype)) {
-      // Delete the uploaded file
+      // Delete temp file
       fs.unlinkSync(file.filepath);
       return res.status(400).json({ error: 'Invalid file type. Only JPEG, PNG, GIF, WEBP allowed.' });
     }
 
-    // Get the relative path for the database
-    const filename = path.basename(file.filepath);
-    const imageUrl = filename; // Just the filename, the component adds the path
+    // Generate unique filename
+    const timestamp = Date.now();
+    const originalName = file.originalFilename || 'image';
+    const safeName = originalName
+      .replace(/\s+/g, '-')
+      .replace(/[^a-zA-Z0-9.-]/g, '')
+      .toLowerCase();
+    const filename = `${timestamp}-${safeName}`;
+
+    // Read file as buffer
+    const fileBuffer = fs.readFileSync(file.filepath);
+
+    // Upload to Supabase Storage
+    const publicUrl = await uploadImage(fileBuffer, filename, file.mimetype);
+
+    // Delete temp file
+    fs.unlinkSync(file.filepath);
 
     return res.status(200).json({
       success: true,
       filename: filename,
-      imageUrl: imageUrl,
+      imageUrl: publicUrl,
       message: 'Image uploaded successfully'
     });
 
   } catch (error) {
     console.error('Upload error:', error);
-    return res.status(500).json({ error: 'Failed to upload image' });
+    return res.status(500).json({ error: error.message || 'Failed to upload image' });
   }
 }

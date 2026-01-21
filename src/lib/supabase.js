@@ -163,3 +163,60 @@ export async function getAllAIContext() {
   
   return result;
 }
+
+// ==========================================
+// STORAGE FUNCTIONS
+// ==========================================
+
+const STORAGE_BUCKET = 'portofolio-web';
+
+/**
+ * Upload an image to Supabase Storage
+ * @param {File|Buffer} file - The file to upload
+ * @param {string} filename - The filename to use
+ * @param {string} contentType - The MIME type
+ */
+export async function uploadImage(fileBuffer, filename, contentType) {
+  const { data, error } = await supabase.storage
+    .from(STORAGE_BUCKET)
+    .upload(filename, fileBuffer, {
+      contentType,
+      upsert: true, // Overwrite if exists
+    });
+
+  if (error) {
+    console.error('Error uploading to storage:', error);
+    throw error;
+  }
+
+  return getImagePublicUrl(data.path);
+}
+
+/**
+ * Get the public URL for an image in storage
+ * @param {string} path - The file path in the bucket
+ */
+export function getImagePublicUrl(path) {
+  const { data } = supabase.storage
+    .from(STORAGE_BUCKET)
+    .getPublicUrl(path);
+  
+  return data.publicUrl;
+}
+
+/**
+ * Delete an image from storage
+ * @param {string} filename - The filename to delete
+ */
+export async function deleteImage(filename) {
+  const { error } = await supabase.storage
+    .from(STORAGE_BUCKET)
+    .remove([filename]);
+
+  if (error) {
+    console.error('Error deleting from storage:', error);
+    throw error;
+  }
+  
+  return true;
+}
