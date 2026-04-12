@@ -144,7 +144,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
         {typeof img === 'string' ? (
           <motion.img
             src={img}
-            className="h-auto w-full object-cover"
+            className="w-full h-[400px] lg:h-[300px] md:h-[250px] sm:h-[200px] object-contain"
             alt={title}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
@@ -152,7 +152,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
         ) : (
           <FramerImage
             src={img}
-            className="h-auto w-full object-cover"
+            className="w-full h-[400px] lg:h-[300px] md:h-[250px] sm:h-[200px] object-contain"
             alt={title}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
@@ -233,7 +233,7 @@ const Project = ({ title, type, img, link, tools, summary }) => {
           <motion.img
             src={img}
             alt={title}
-            className="h-auto w-full"
+            className="w-full h-[250px] md:h-[200px] sm:h-[180px] object-contain"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           />
@@ -241,7 +241,7 @@ const Project = ({ title, type, img, link, tools, summary }) => {
           <FramerImage
             src={img}
             alt={title}
-            className="h-auto w-full"
+            className="w-full h-[250px] md:h-[200px] sm:h-[180px] object-contain"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
             sizes="(max-width: 768px) 100vw,
