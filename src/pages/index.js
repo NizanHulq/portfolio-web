@@ -24,16 +24,16 @@ export default function Home() {
       >
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
-            <div className="w-1/2 lg:hidden md:flex flex self-center max-h-fit">
+            <div className="w-1/2 lg:hidden md:flex flex items-center justify-center self-center max-h-fit pr-8">
               {
                 <Image
                   priority={true}
                   src={profilePic}
-                  alt="image"
-                  className="h-auto w-100"
-                  height={340}
-                  width={340}
-                  sizes="33vw"
+                  alt="Nizan Profile Picture"
+                  className="h-auto w-full max-w-[500px] xl:max-w-[450px]"
+                  height={500}
+                  width={500}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
               }
             </div>
